@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Elevated extends StatelessWidget {
-  final VoidCallback onPressed; // Callback function
+  final VoidCallback onPressed;
 
   const Elevated({Key? key, required this.onPressed}) : super(key: key);
   @override

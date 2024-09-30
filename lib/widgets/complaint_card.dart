@@ -7,8 +7,8 @@ class ComplaintCard extends StatelessWidget {
   final String userName;
   final String date;
   final String description;
-  final String category; // Add category field
-  final List<String> images; // Assuming images is a list of image paths
+  final String category;
+  final List<String> images;
   final Function() onEdit;
   final Function() onDelete;
 
@@ -19,8 +19,8 @@ class ComplaintCard extends StatelessWidget {
     required this.userName,
     required this.date,
     required this.description,
-    required this.category, // Add category parameter
-    required this.images, // Add images parameter
+    required this.category,
+    required this.images,
     required this.onEdit,
     required this.onDelete,
   }) : super(key: key);
@@ -31,8 +31,7 @@ class ComplaintCard extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: EdgeInsets.symmetric(
-          vertical: height * 0.005), // Keep only vertical padding
+      padding: EdgeInsets.symmetric(vertical: height * 0.005),
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(
@@ -110,7 +109,7 @@ class ComplaintCard extends StatelessWidget {
                 description,
                 style: TextStyle(fontSize: width * 0.03, color: Colors.grey),
               ),
-              if (images.isNotEmpty) // Show images if available
+              if (images.isNotEmpty)
                 Wrap(
                   spacing: 8,
                   children: images.map((imagePath) {
@@ -127,12 +126,14 @@ class ComplaintCard extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: onEdit,
-                    child: Text('Edit', style: TextStyle(color: Colors.green)),
+                    child: const Text('Edit',
+                        style: TextStyle(color: Colors.green)),
                   ),
                   SizedBox(width: width * 0.02),
                   TextButton(
                     onPressed: onDelete,
-                    child: Text('Delete', style: TextStyle(color: Colors.red)),
+                    child: const Text('Delete',
+                        style: TextStyle(color: Colors.red)),
                   ),
                 ],
               ),

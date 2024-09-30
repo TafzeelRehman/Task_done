@@ -196,6 +196,7 @@ class _BottomSheetReviewState extends State<BottomSheetReview> {
                         showImageSourceDialog(context, _pickImage);
                       },
                       backgroundColor: Colors.white,
+                      // ignore: sort_child_properties_last
                       child: const Icon(Icons.add, color: Color(0xFFE0847D)),
                       mini: true,
                     ),
